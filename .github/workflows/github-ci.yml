@@ -24,9 +24,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-        id: dotenv
-        uses: ./.github/actions/dotenv-action
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
+        id: dotenv
+        uses: ./.github/actions/dotenv-action
         run: cat ${{ steps.dotenv.outputs.construct }}
