@@ -24,9 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
+      
+      - name: get evn var
         id: dotenv
         uses: ./.github/actions/dotenv-action
+        
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
         run: cat ${{ steps.dotenv.outputs.construct }}
